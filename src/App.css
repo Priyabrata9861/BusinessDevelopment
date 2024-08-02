@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+body, html {
+  height: 100%;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.login{
+  background: url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%; 
+  width: 100%;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+}
+@keyframes borderMove {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 100% 0, 100% 0, 100% 100%, 0 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.animated-border {
+  position: relative;
+  border-radius: 20px;
+  padding: 60px; /* Adjust padding if necessary */
 }
 
-.App-link {
-  color: #61dafb;
+.animated-border::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(90deg, #0bde20, #2007de, #caec07, #f1c40f);
+  background-size: 400% 400%;
+  border-radius: 15px;
+  z-index: -1;
+  animation: borderMove 3s linear infinite;
+}
+input[type="text"], input[type="password"] {
+  position: relative;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="text"]::before, input[type="password"]::before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #3498db;
+  transition: all 0.3s ease;
 }
+
+input[type="text"]:focus::before, input[type="password"]:focus::before {
+  width: 100%;
+  left: 0;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #142bdb;
+}
+.password-rel{
+  position: relative;
+}
+.eye-icon{
+  position: absolute;
+  right: 1px;
+  bottom: 7px;
+  background: #fff;
+  padding-right: 16px;
+  padding-left: 20px;
+}
+
+
+
+
