@@ -1,46 +1,35 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
-
 .login{
-  background: url("https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background: url("https://plus.unsplash.com/premium_photo-1661880749508-71d9e7170508?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%; 
-  width: 100%;
-
 }
-@keyframes borderMove {
+@keyframes borderColorChange {
   0% {
-    background-position: 0 0, 0 0, 0 0, 0 0;
+    border-color: red;
+  }
+  25% {
+    border-color: orange;
+  }
+  50% {
+    border-color: yellow;
+  }
+  75% {
+    border-color: green;
   }
   100% {
-    background-position: 100% 0, 100% 0, 100% 100%, 0 100%;
+    border-color: blue;
   }
 }
-
-.animated-border {
+.form{
+  border: 4px solid; 
+  animation: borderColorChange 5s infinite;
   position: relative;
-  border-radius: 20px;
-  padding: 60px; /* Adjust padding if necessary */
+  border-radius: 15px;
+  padding: 60px;
+  opacity: 0.9;
 }
 
-.animated-border::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  background: linear-gradient(90deg, #0bde20, #2007de, #caec07, #f1c40f);
-  background-size: 400% 400%;
-  border-radius: 15px;
-  z-index: -1;
-  animation: borderMove 3s linear infinite;
-}
 input[type="text"], input[type="password"] {
   position: relative;
   border: none;
@@ -64,12 +53,6 @@ input[type="text"]:focus::before, input[type="password"]:focus::before {
   width: 100%;
   left: 0;
 }
-
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #142bdb;
-}
 .password-rel{
   position: relative;
 }
@@ -80,6 +63,18 @@ input[type="text"]:focus::before, input[type="password"]:focus::before {
   background: #fff;
   padding-right: 16px;
   padding-left: 20px;
+}
+.button-primary {
+  background-color:green;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  }
+.button-primary:hover {
+  background-color:#0616f6e6;
+  color: #fff; 
 }
 
 
