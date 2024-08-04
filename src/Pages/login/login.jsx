@@ -61,13 +61,13 @@ function Login() {
     setIsPasswordVisible(!isPasswordVisible);
   };
   return (
-    <Container className="d-flex justify-content-center align-items-center vh-100 login">
+    <div className="d-flex justify-content-center align-items-center vh-100 login">
       <Row>
-        <Card className='animated-border'>
-          <Card.Body>
-            <Card.Title className="text-center mb-4">Business Development</Card.Title>
+        <div className='form bg-light'>
+          <div>
+            <div className="text-center mb-4 text-success fw-bold fs-4 ">Business Development</div>
             <Form onSubmit={handleSubmit}>
-              <Col lg={12}>
+              <Col lg={12} className='pb-4'>
                 <Form.Group controlId="username">
                   <Form.Label>username</Form.Label>
                   <div className='password-rel'>
@@ -114,19 +114,19 @@ function Login() {
                 email={email}
                 setEmail={setEmail}
               />
-              <Button variant="primary" type="submit" className="w-100 mt-4">
-                Login
-              </Button>
+              <button variant="primary" type="submit" className=" button-primary w-100 mt-4">
+                Sign in
+              </button>
             </Form>
             {/* <div className="mt-3 text-center"><Link onClick={handleForgotPasswordClick}>
               Forgot Password
             </Link></div> */}
 
-          </Card.Body>
-        </Card>
+          </div>
+        </div>
       </Row>
       <ToastContainer position="top-center" />
-    </Container>
+    </div>
   )
 }
 export default Login
