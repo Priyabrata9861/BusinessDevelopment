@@ -10,12 +10,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../layouts/commonLayout.css'
 function Login() {
   const [formData, setFormData] = useState({ username: '', password: '' });
-  const [errors, setErrors] = useState({ username: '', password: '' });
-  const [showAlert, setShowAlert] = useState(false);
   const [isUsernameVisible, setIsUsernameVisible] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [showForgotPasswordModal, setShowForgotPasswordModal] = useState(false);
   const [email, setEmail] = useState("");
+
   const handleForgotPasswordClick = () => {
     setEmail(null);
     setShowForgotPasswordModal(true);
@@ -41,17 +40,14 @@ function Login() {
       toast.error('Password is required');
       isValid = false;
     }
-
-    setErrors(errors);
     return isValid;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
-      // Handle form submission
       console.log('Form submitted:', formData);
-      setShowAlert(true);
+      toast.success('Login successful!');
     }
   };
   const toggleUsernameVisibility = () => {
@@ -67,11 +63,6 @@ function Login() {
         <Card className='animated-border'>
           <Card.Body>
             <Card.Title className="text-center mb-4">Business Development</Card.Title>
-            {showAlert && (
-              <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
-                Login successful!
-              </Alert>
-            )}
             <Form onSubmit={handleSubmit}>
               <Col lg={12}>
                 <Form.Group controlId="username">
@@ -83,7 +74,6 @@ function Login() {
                       name="username"
                       value={formData.username}
                       onChange={handleChange}
-                      isInvalid={!!errors.username}
                       className="username-input"
                     />
                     <div className='eye-icon'>
@@ -92,7 +82,6 @@ function Login() {
                       </span>
                     </div>
                   </div>
-                  <Form.Control.Feedback type="invalid">{errors.username}</Form.Control.Feedback>
                 </Form.Group>
               </Col>
               <Col lg={12}>
@@ -105,7 +94,6 @@ function Login() {
                       name="password"
                       value={formData.password}
                       onChange={handleChange}
-                      isInvalid={!!errors.password}
                       className="password-input"
                     />
 
@@ -115,8 +103,6 @@ function Login() {
                       </span>
                     </div>
                   </div>
-
-                  <Form.Control.Feedback type="invalid">{errors.password}</Form.Control.Feedback>
                 </Form.Group>
               </Col>
               <ForgotPassword
