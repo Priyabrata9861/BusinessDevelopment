@@ -3,7 +3,7 @@ import { Form, Button, Container, Row, Col, Alert, Card } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ForgotPassword from './forgotPassword';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,7 +14,7 @@ function Login() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [showForgotPasswordModal, setShowForgotPasswordModal] = useState(false);
   const [email, setEmail] = useState("");
-
+  const navigate = useNavigate();
   const handleForgotPasswordClick = () => {
     setEmail(null);
     setShowForgotPasswordModal(true);
@@ -48,6 +48,9 @@ function Login() {
     if (validate()) {
       console.log('Form submitted:', formData);
       toast.success('Login successful!');
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 2500); 
     }
   };
   const toggleUsernameVisibility = () => {
