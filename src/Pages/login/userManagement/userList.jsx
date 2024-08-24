@@ -1,8 +1,10 @@
-function User(){
-    return(
-        <div className="text-sucess">
-            HEllo Worlsd
-        </div>
+
+
+function User() {
+    return (
+        <>
+           Hiiii
+        </>
     )
 }
 export default User
