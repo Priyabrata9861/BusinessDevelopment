@@ -3,7 +3,7 @@ import './App.css';
 import Login from './Pages/login/login';
 import Sidebar from './sidebar-component/sidebar';
 import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
-import User from './Pages/login/userManagement/userList';
+import User from './Pages/userManagement/userList';
 import Dashboard from './Components/dashboard';
 function App() {
   return (
