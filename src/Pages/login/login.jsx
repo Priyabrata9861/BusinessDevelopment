@@ -8,6 +8,7 @@ import ForgotPassword from './forgotPassword';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../layouts/commonLayout.css'
+import { TbBusinessplan } from "react-icons/tb";
 function Login() {
   const [formData, setFormData] = useState({ username: '', password: '' });
   const [isUsernameVisible, setIsUsernameVisible] = useState(false);
@@ -65,6 +66,9 @@ function Login() {
       <Row>
         <div className='form bg-light'>
           <div>
+          <div className="d-flex justify-content-center align-items-center fw-bold fs-5">
+          <TbBusinessplan />
+          </div>
             <div className="text-center mb-4 text-success fw-bold fs-4 ">Business Development</div>
             <Form onSubmit={handleSubmit}>
               <Col lg={12} className='pb-4'>
