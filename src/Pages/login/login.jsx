@@ -118,9 +118,9 @@ function Login() {
                 Sign in
               </button>
             </Form>
-            {/* <div className="mt-3 text-center"><Link onClick={handleForgotPasswordClick}>
+            {/* { { <div className="mt-3 text-center"><Link onClick={handleForgotPasswordClick}>
               Forgot Password
-            </Link></div> */}
+            </Link></div> }} */}
 
           </div>
         </div>
