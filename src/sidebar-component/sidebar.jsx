@@ -13,15 +13,22 @@ const SidebarContainer = styled.div`
   width: ${props => (props.isOpen ? '200px' : '60px')};
   transition: width 0.2s;
   overflow: hidden;
+  align-items: center;
+    display: flex;
+    flex-direction: column;
+        font-weight: bold;
+
 `;
 
 const ContentContainer = styled.div`
   margin-left: ${props => (props.isOpen ? '200px' : '60px')};
   padding: 16px;
   transition: margin-left 0.2s;
+
 `;
 
 const ToggleButton = styled.button`
+
   background: none;
   border: none;
   color: white;
