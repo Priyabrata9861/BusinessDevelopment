@@ -1,8 +1,9 @@
 import React from 'react'
+import UserFilter from './userFilter'
 function UserManagement() {
   return (
     <div>
-      HIIIIIIIII
+      <UserFilter/>
     </div>
   )
 }
